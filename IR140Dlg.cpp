@@ -280,37 +280,6 @@ void CIR140Dlg::OnBnClickedDisconnectButton()
 	PvDevice::Free(mDevice);
 
 
-	
-	//// Get device parameters need to control streaming
-	//PvGenParameterArray* lDeviceParams = mDevice->GetParameters();
-
-	//// Tell the device to stop sending images.
-	//PvGenCommand* lStop = dynamic_cast<PvGenCommand*>(lDeviceParams->Get("AcquisitionStop"));
-
-	//pThread->SuspendThread();
-	//AfxEndThread(0, 1);
-
-
-	//lStop->Execute();
-
-	//// Disable streaming on the device
-	////cout << "Disable streaming on the controller." << endl;
-	//mDevice->StreamDisable();
-
-	//// Stop the pipeline
-	////cout << "Stop pipeline" << endl;
-	//mPipeline->Stop();
-
-	//delete mPipeline;
-
-	//mStream->Close();
-	//PvStream::Free(mStream);
-	//mDevice->Disconnect();
-	//PvDevice::Free(mDevice);
-
-
-
-
 	//// Tell the device to stop sending images.
 	//cout << "Sending AcquisitionStop command to the device" << endl;
 	//mDeviceParams->ExecuteCommand("AcquisitionStop");
