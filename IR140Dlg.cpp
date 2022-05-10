@@ -165,20 +165,6 @@ void CIR140Dlg::OnPaint()
 		CDialog::OnPaint();
 
 	}
-	if (!mAcquiringImages)
-	{
-		HDC hdc = ::GetDC(this->m_hWnd);
-		CRect lDisplayRect;
-		GetDlgItem(IDC_DISPLAYPOS)->GetClientRect(&lDisplayRect);
-		GetDlgItem(IDC_DISPLAYPOS)->ClientToScreen(&lDisplayRect);
-		ScreenToClient(&lDisplayRect);
-		HBRUSH hbrush = GetSysColorBrush(COLOR_3DDKSHADOW);
-		FillRect(hdc, lDisplayRect, hbrush);
-		::ReleaseDC(this->m_hWnd, hdc);
-		DeleteObject(hbrush);
-	}
-
-
 
 	//EnableInterface();
 }
@@ -194,12 +180,6 @@ HCURSOR CIR140Dlg::OnQueryDragIcon()
 
 void CIR140Dlg::OnBnClickedConnectButton()
 {
-
-	CRect lDisplayRect;
-	GetDlgItem(IDC_DISPLAYPOS)->GetClientRect(&lDisplayRect);
-	GetDlgItem(IDC_DISPLAYPOS)->ClientToScreen(&lDisplayRect);
-	ScreenToClient(&lDisplayRect);
-	
 	//selecting device
 	if (PvSelectDevice(&mConnectionID))
 	{
